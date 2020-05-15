@@ -156,7 +156,7 @@ class cwjsonapi:
         """
                 
         baseUrl = self.cwUrl + "service/tickets/"+str(cwTicket)
-        # TODO: write a function to obtain the unique status ID for the board the ticket lives on - e.g. get_status_id('>Closed') to avoid hardcoded 696 that only exists on the backup board
+        # TODO: write a function to obtain the unique status ID for the board the ticket lives on - e.g. get_status_id('>Closed') to avoid hardcoded 696 that only exists on a specific board
         payload = [{'op': 'replace', 'path': 'status/id', 'value': 696}] # note - this is a list
         try:
             r = requests.patch(baseUrl, json=payload, headers=self.cwHeaders)
