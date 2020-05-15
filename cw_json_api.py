@@ -40,12 +40,9 @@ class cwjsonapi:
         else:
             self.cwUrl = "https://api-na.myconnectwise.net/v4_6_release/apis/3.0/"
         
-        if ("headers" in kwargs):
-            self.requestOptions["headers"] = kwargs["headers"]
-        else:
-            self.cwHeaders = {"Authorization":"Basic " + self.cwToken,
-                "clientID":self.clientID,
-                "Content-Type":"application/json"}
+        self.cwHeaders = {"Authorization":"Basic " + self.cwToken,
+            "clientID":self.clientID,
+            "Content-Type":"application/json"}
                      
         # make a quick request to ensure all is setup OK
         try:
